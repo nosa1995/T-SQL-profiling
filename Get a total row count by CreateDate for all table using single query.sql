@@ -1,4 +1,4 @@
-USE Salesforce_Prod;
+USE Salesforce_Prod; 
 GO
 
 WITH cteCreatedDate AS (
@@ -45,6 +45,29 @@ WITH cteCreatedDate AS (
     SELECT 'CommunityGroupRole__c', CAST(CreatedDate AS date) FROM dbo.CommunityGroupRole__c
     UNION ALL
     SELECT 'Participation__c', CAST(CreatedDate AS date) FROM dbo.Participation__c
+    -- Newly Added Tables
+    UNION ALL
+    SELECT 'RecordType', CAST(CreatedDate AS date) FROM dbo.RecordType
+    UNION ALL
+    SELECT 'User2', CAST(CreatedDate AS date) FROM dbo.User2
+    UNION ALL
+    SELECT 'CountrieswithIncomeLevels_c', CAST(CreatedDate AS date) FROM dbo.CountrieswithIncomeLevels_c
+    UNION ALL
+    SELECT 'OrderAPI_Business_Group_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_Business_Group_c
+    UNION ALL
+    SELECT 'OrderAPI_Subcription_Plan_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_Subcription_Plan_c
+    UNION ALL
+    SELECT 'OrderAPI_item_Subcription_Plan_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_item_Subcription_Plan_c
+    UNION ALL
+    SELECT 'OrderAPI_Payment_Gateway_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_Payment_Gateway_c
+    UNION ALL
+    SELECT 'OrderAPI_Payment_method_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_Payment_method_c
+    UNION ALL
+    SELECT 'OrderAPI_Payment_terms_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_Payment_terms_c
+    UNION ALL
+    SELECT 'OrderAPI_GL_account_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_GL_account_c
+    UNION ALL
+    SELECT 'OrderAPI_Source_Code_c', CAST(CreatedDate AS date) FROM dbo.OrderAPI_Source_Code_c
 )
 SELECT 
     TableName,
