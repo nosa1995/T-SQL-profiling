@@ -76,3 +76,22 @@ SELECT
 FROM cteCreatedDate
 GROUP BY TableName, CreatedDate
 ORDER BY TableName, CreatedDate ASC;
+
+
+WITH cteCreatedDate AS (
+
+    
+    SELECT 'OrderAPI_Subcription_Plan_c' AS TableName, CAST(LastModifiedDate AS date) AS LastModifiedDate FROM dbo.OrderApi__Subscription_Plan__c
+    UNION ALL
+    SELECT 'OrderAPI_Payment_terms_c' AS TableName, CAST(LastModifiedDate AS date) AS LastModifiedDate FROM dbo.OrderApi__Payment_Terms__c
+
+  
+)
+SELECT 
+    TableName,
+    LastModifiedDate,
+    COUNT(1) AS [RowCount]
+FROM cteCreatedDate
+GROUP BY TableName, LastModifiedDate
+ORDER BY TableName, LastModifiedDate ASC;
+
